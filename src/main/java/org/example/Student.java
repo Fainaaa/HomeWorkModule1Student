@@ -2,7 +2,6 @@ package org.example;
 
 import java.util.ArrayList;
 
-
 public class Student {
     private String name;
     private ArrayList<Book> books;

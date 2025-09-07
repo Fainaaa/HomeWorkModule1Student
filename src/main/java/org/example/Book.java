@@ -39,6 +39,7 @@ public class Book {
         return String.format("Книга. Название: %s. Год выпуска: %d. Количество страниц: %d.", this.name, this.releaseYear, this.pageCount);
     }
 
+    //методы equals и hashCode переопределены для работы с колекцией CustomLinkedList
     @Override
     public int hashCode() {
         int result = 31;
