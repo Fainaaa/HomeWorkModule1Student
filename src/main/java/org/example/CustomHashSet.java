@@ -13,6 +13,7 @@ public class CustomHashSet<K> {
     private int size;
     private int threshold;
 
+    ///////////////////////////////////////////////Вложенная нода/////////////////////////////////////////////////////////
     private static class Node<K> {
         final K key;
         final int hash;
@@ -38,6 +39,7 @@ public class CustomHashSet<K> {
         threshold = (int)(loadFactor);
     }
 
+    ///////////////////////////////////////////////Основные методы/////////////////////////////////////////////////////////
     public boolean add(K key) {
         int hash = hash(key);
         int index = bucketIndex(hash, table.length);
@@ -90,6 +92,7 @@ public class CustomHashSet<K> {
         return size;
     }
 
+    ///////////////////////////////////////////////Внутренние вспомогателшьные метды/////////////////////////////////////////////////////////
     private int hash(K key) {
         int h = key.hashCode();
         return (key == null) ? 0 : h ^ (h >>> 16);  //сдвигаем старшие биты к концу для более точного распределения

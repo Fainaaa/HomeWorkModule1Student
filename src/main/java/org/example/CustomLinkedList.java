@@ -9,6 +9,19 @@ public class CustomLinkedList<E> {
     private Node<E> last;
     private int size = 0;
 
+    /////////////////////////////////////////////////Вложенная нода///////////////////////////////////////////////////////
+    private static class Node<E> {
+        E item;
+        Node<E> next;
+        Node<E> prev;
+
+        Node(CustomLinkedList.Node<E> prev, E element, CustomLinkedList.Node<E> next) {
+            this.item = element;
+            this.next = next;
+            this.prev = prev;
+        }
+    }
+
     ///////////////////////////////////////////////Основные методы/////////////////////////////////////////////////////////
     public int size() {
         return size;
@@ -223,17 +236,5 @@ public class CustomLinkedList<E> {
             sb.append("\n" + get(i));
         }
         return sb.toString();
-    }
-    /////////////////////////////////////////////////Вложенная нода///////////////////////////////////////////////////////
-    private static class Node<E> {
-        E item;
-        Node<E> next;
-        Node<E> prev;
-
-        Node(CustomLinkedList.Node<E> prev, E element, CustomLinkedList.Node<E> next) {
-            this.item = element;
-            this.next = next;
-            this.prev = prev;
-        }
     }
 }
